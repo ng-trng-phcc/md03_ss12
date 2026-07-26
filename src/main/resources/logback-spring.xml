@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <appender name="HISTORY_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/history.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="history" level="INFO" additivity="false">
+        <appender-ref ref="HISTORY_FILE"/>
+    </logger>
+</configuration>
